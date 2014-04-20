@@ -7,16 +7,13 @@ block variables
 //MIXINS
 //it is advised to use this instead of raw anchors
 
-mixin rootLink(str)
-  a(href=root)!= str
-
 mixin link(name, str)
   - str = str || name
   a(href=root + name + ".html")!= str
 
 //ACTUAL CONTENTS HERE
 
-h1: +rootLink('Notodeim')
+h1: a(href=root+'index.html') Notodeim
 ul
   li: +link('synopsis')
   li: +link('howto')
