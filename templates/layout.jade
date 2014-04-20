@@ -1,0 +1,25 @@
+//LAYOUT VARIABLES
+//append this block to override the variables
+
+block variables
+  - var root = ""
+
+//MIXINS
+//it is advised to use this instead of raw anchors
+
+mixin link(name, str)
+  - str = str || name
+  a(href=root + name + ".html")!= str
+
+//ACTUAL CONTENTS HERE
+
+h1: a(href=root+'index.html') Notodeim
+ul
+  li: +link('synopsis')
+  li: +link('howto')
+  li: +link('units')
+hr
+
+block content
+
+p Copyright Diesix games

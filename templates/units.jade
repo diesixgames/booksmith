@@ -1,0 +1,12 @@
+extends layout
+
+block append content
+  h3!= name
+  p!= contents
+
+  block unitinfo
+
+  hr
+  ul
+    each unit in units
+      li: +link("units/"+unit, unit)
