@@ -1,0 +1,26 @@
+//LAYOUT VARIABLES
+//append this block to override the variables
+
+block variables
+  - var root = ""
+
+- var csspath = root + "style.css"
+
+//MIXINS
+//it is advised to use this instead of raw anchors
+
+mixin link(name, str)
+  - str = str || name
+  a(href=root + name + ".html")!= str
+
+doctype html
+html(lang="en")
+  head
+    title= "Notodeim" + (title?title:"")
+    link(rel="stylesheet"
+         href=csspath
+         type="text/css")
+    block head
+
+  body
+    block body

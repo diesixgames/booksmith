@@ -1,25 +1,35 @@
-//LAYOUT VARIABLES
-//append this block to override the variables
+extends html
 
-block variables
-  - var root = ""
+block append head
+  script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
 
-//MIXINS
-//it is advised to use this instead of raw anchors
+block append body
+  //ACTUAL CONTENTS HERE
+  div.header
+    h1: a(href=root+'index.html') Notodeim
+    ul.menu
+      li: +link('synopsis')
+      li: +link('howto')
+      li: +link('units')
+  hr
 
-mixin link(name, str)
-  - str = str || name
-  a(href=root + name + ".html")!= str
+  div.body
+    div.contents
+      block content
+    iframe#reference
 
-//ACTUAL CONTENTS HERE
+  div.footer
+    p Copyright Diesix gattr
 
-h1: a(href=root+'index.html') Notodeim
-ul
-  li: +link('synopsis')
-  li: +link('howto')
-  li: +link('units')
-hr
+  script.
+    $(document).ready(function() {
 
-block content
+      $('#reference').hide();
 
-p Copyright Diesix games
+      $('.unit_ref').mouseenter(function(event) {
+        var url = "./#{root}units/" + event.target.textContent + ".html";
+        $('#reference').attr("src", url).show();
+      }).mouseleave(function(event) {
+        $('#reference').removeAttr("src").hide();
+      });
+    });

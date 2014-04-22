@@ -9,4 +9,4 @@ block append content
   hr
   ul
     each unit in units
-      li: +link("units/"+unit, unit)
+      li.card_thumbnail!= "[[" + unit + "]]"

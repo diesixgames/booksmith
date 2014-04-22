@@ -1,43 +1,7 @@
-extends units
+extends html
 
 block append variables
   - root = "../"
 
-block append unitinfo
-  div.unit
-
-    div.faction= faction
-
-    if flavor
-      div.flavor= flavor
-    
-    div.health= health
-    div.speed
-      - each val, speed in speeds
-        if speed != 'base'
-          span= speed + " " + val
-        else
-          span= val
-    div.defenses
-      - each val, defense in defenses
-        if defense != 'etc'
-          span= defense + " " + val
-        else
-          span= val
-    
-    div.attacks
-      - each attack in attacks
-        div.name= attack.name
-        span.damage= attack.damage
-        span.hit= attack.hit
-        span.type= attack.type
-        if attack.flavor
-          div.flavor= attack.flavor
-
-    div.rules
-      - each rule in rules
-        div.rule
-          span.name= rule.name
-          span.rule= rule.rule
-        if rule.flavor
-          div.flavor= rule.flavor
+block append body
+  div.card!= contents
