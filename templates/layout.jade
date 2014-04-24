@@ -11,12 +11,13 @@ block append body
       li: +link('synopsis')
       li: +link('howto')
       li: +link('units')
-  hr
+    div.clear_both
 
   div.body
     div.contents
       block content
-    iframe#reference
+    div#reference
+    div.clear_both
 
   div.footer
     p Copyright Diesix gattr
@@ -28,8 +29,9 @@ block append body
 
       $('.unit_ref').mouseenter(function(event) {
         var url = "./#{root}units/" + event.target.textContent + ".html";
-        $('#reference').attr("src", url).show();
+        $('#reference').load(url).show();
+
       }).mouseleave(function(event) {
-        $('#reference').removeAttr("src").hide();
+        $('#reference').hide();
       });
     });
