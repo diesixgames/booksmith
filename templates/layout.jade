@@ -24,14 +24,28 @@ block append body
 
   script.
     $(document).ready(function() {
+      var reference_hide_css = { opacity: 0, "margin-right": -20 };
+      var reference_show_css = { opacity: 1, "margin-right": 0 };
 
-      $('#reference').hide();
+      $('#reference').animate(reference_hide_css, 0);
 
-      $('.unit_ref').mouseenter(function(event) {
-        var url = "./#{root}units/" + event.target.textContent + ".html";
-        $('#reference').load(url).show();
+      $('.ref').mouseenter(function(event) {
 
+        var name = event.target.textContent.toLowerCase().replace(/\ /g, '-');
+        var dir = $(this).attr('type');
+        dir = dir == ""? "units" : dir;
+        var url = "./#{root}" + dir + "/" + name + ".html";
+        var url404 = "./#{root}404card.html";       
+        var offset = $(document).scrollTop();
+
+        $('#reference').css({"margin-top": offset}).load(url,
+        function(responseText, textState, XMLHttpRequest) {
+            console.log(textState);
+            if (textState == "error")
+                $(this).load(url404);
+            $(this).stop().animate(reference_show_css, 150);
+        });
       }).mouseleave(function(event) {
-        $('#reference').hide();
+        $('#reference').stop().animate(reference_hide_css, 150);
       });
     });

@@ -1,7 +1,9 @@
 ---
-template: unit.jade
+template: card.jade
 faction: white, black, blue
+image: http://img.timeinc.net/time/daily/2007/0701/360_borat_lebanon0109.jpg
 ---
+
 
 >A hammer wielding burwalk, adept at overwhelming melee foes.
 
@@ -35,5 +37,5 @@ enemies' defense.
 
 ##Melee overwhelm
 
-+ When Boris scored a hit on target unit, it's melee weapon last used against
+When Boris scored a hit on target unit, it's melee weapon last used against
 him is disabled for one round.`

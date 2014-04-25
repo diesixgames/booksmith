@@ -3,6 +3,8 @@ var Metalsmith = require('metalsmith'),
     collections = require('metalsmith-collections'),
     stylus = require('metalsmith-stylus'),
     watch = require('metalsmith-watch'),
+    ignore = require('metalsmith-ignore'),
+    assets = require('metalsmith-static'),
     templates = require('metalsmith-templates');
 
 var customPlugins = require('./custom_plugins');
@@ -21,6 +23,7 @@ Metalsmith(__dirname)
     .use(markdown())
     .use(stylus())
     .use(templates('jade'))
-    .use(customPlugins.parseUnitRef())
+    .use(customPlugins.parseRef())
+    .use(assets())
     .use(watch)
     .build(handle);

@@ -19,15 +19,23 @@ exports.getUnitNames = function() {
   };
 };
 
-exports.parseUnitRef = function() {
+exports.parseRef = function() {
     return function(files, metalsmith, done) {
         
         for (var file in files) {
             var str = files[file].contents.toString('utf8');
             if (str == null) continue;
+
+            str = str.replace(/\[(|(rules)|(units))\[[^\[\]]*\]\]/g, function(match) {
+
+                match = match.replace(/\[/, '<span class="ref" type="');
+                match = match.replace(/\[/, '">');
+                match = match.replace(/\]\]/, '</span>');
+
+                return match;
+
+            });
             
-            str = str.replace(/\[\[/g, '<span class="unit_ref">');
-            str = str.replace(/\]\]/g, '</span>');
             files[file].contents = new Buffer(str);
         }
 

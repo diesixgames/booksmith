@@ -1,6 +1,7 @@
 ---
-template: unit.jade
+template: card.jade
 faction: white, black, blue
+image: https://31.media.tumblr.com/f87bd167043907f74b2557054dd13291/tumblr_n42hiwmz3L1t8junlo8_250.jpg
 ---
 
 >Misteriously hooded, Hanna conceal her arsenal of vials and trap

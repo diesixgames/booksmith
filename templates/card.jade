@@ -1,0 +1,11 @@
+extends html
+
+block append variables
+  - root = "../"
+
+block append body
+  div.card
+    if image != null
+      img#card_image(src=image)
+      img#card_overlay(src!=root+"public/card_overlay.png")
+    != contents

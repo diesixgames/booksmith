@@ -3,15 +3,14 @@
 $card_width = 280px
 
 #reference
-    margin-left 20px
     min-height 800px
-    float left
+    float right
     width $card_width
 
 .footer
     clear both
 
-.unit_ref
+.ref
     display inline
     font-size 85%
     padding 2px 6px
@@ -29,44 +28,63 @@ $card_width = 280px
 .card
     font-size 75%
     max-width $card_width
-    background-color #f0f0f0
+    background-color #eee
     font-family Sans-Serif
     color #333
     padding 5px 0
     border-radius 6px
 
+    img
+        width $card_width
+        height 150px
+
+    #card_overlay
+        position relative
+        top -172px
+        margin-bottom -160px
+
     h1
         text-transform capitalize
-        font-size 110%
+        font-size 100%
         display block
         width $card_width - 10px
-        background-color #bbb
-        color #f0f0f0
+        color #aaa
         padding 5px
-        margin 5px 0
+        margin 15px 0 5px
+        border-top 1px dashed #aaa
 
     h2
-        font-size 120%
+        color #666
+        display inline-block
+        font-size 100%
         text-transform capitalize
         text-align center
         width $card_width - 20px
-        margin 10px 5px
+        margin 5px
 
     blockquote
+        font-size 85%
         display block
         width $card_width - 10px
         text-align right
         font-family Serif
         font-style italic
         color #333
-        padding 5px
+        padding 3px 5px
+
+    ul
+        display inline-block
 
     li
+        font-size 80%
+        font-weight bold
         display inline-block
-        padding 4px 2px
-        margin 3px
+        padding 4px 5px 2px
+        margin 0 3px 0 3px
         background-color #fff
         color #666
         border 1px solid #888
         border-radius 4px
 
+    p
+        padding 5px 10px
