@@ -20,8 +20,8 @@ underneath her cloak.
 #attacks
 
 ##Shiv
-+ damage 1
 + hit 1
-+ melee
+
+Piercing: 1dmg [<2] [6>] 2dmg
 
 >Feminine wile is nothing without a well-placed backup.

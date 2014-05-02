@@ -33,32 +33,27 @@ A banner's stats:
 2.  Recruit units: given a banner, you should be able to filter a
 list of available units. Each unit has a point value, as used to fit
 within the banner's limit. <br>
-Heads over to the [units](units.html) sections for the complete references
-to all units.
 
 3.  Spending gold on upgrades: upgrades are variance of a unit that can
 be allowed to be unlocked using the starting wealth.
 
-##Banner list
+##Encounter
 
-1.  White: driven by virtue, white promote protection and colaboration.
-After all that adventures and losses, we are deemed to realize something..
-friendship?
+1.  At the beginnining of the encounter, [rules[roll higher]] for combat
+order. The winner get to go first.
 
-    +   Unit list: [[boris]]
-    +   Point limit: 22pts
-    +   Starting wealth: 250gp
-    +   Hope abundance: after every encounter, choose one: restore 1hit
-        or restore 1pow each.
+2.  Each player play his turn, then pass it to the other. During one's
+turn, he can opt to end it any time.
 
-2.  Magenta: driven by devotion, magenta promote greater cause and passion
-for faith. Magenta is held by a charismatic figure to led the party.
+3.  At the start of a turn, a player gain [rules[control]] of all his
+[rules[active]] units. When there is no unit he can control left, his turn 
+automatically end.
 
-    +   Unit list: [units[Maien]]
-    +   Point limit: 30pts
-    +   Starting wealth: 200gp
-    +   Driven by Exemplar: choose a unit to be the banner bearer, he gains
-        [rules[lead by example]].
+4.  When controlling a unit, the player enter its control phase, during
+which it can [rules[move]], [rules[attack]] and activate abilities. After 
+moving and attacking, the control phase ends and he lose control of that unit
+for that turn. A player can ends the control phase at will.
 
-3.  Platinum: driven by martial pride, platinum promote hard-earned
-victories and sacrifice. Let
+5.  The encounter ends when any player has no unit that is not
+[rules[incapacitated]]. Then, the player with more [rules[active]] units win
+the encounter, otherwise, it's a draw.

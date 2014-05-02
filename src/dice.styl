@@ -1,0 +1,67 @@
+$as = 4px
+
+.diceleft
+    display inline-block
+    width 0 
+    height 0 
+    border-top: $as solid transparent;
+    border-bottom: $as solid transparent; 
+    border-right: $as solid black; 
+
+.diceright
+    display inline-block
+    width 0 
+    height 0 
+    border-top: $as solid transparent;
+    border-bottom: $as solid transparent; 
+    border-left: $as solid black; 
+
+$ds = 16px
+
+.dice1
+    display inline-block
+    vertical-align middle
+    width $ds
+    height $ds
+    background-image url(public/dices.png)
+    background-position 0px 0px
+
+.dice2
+    display inline-block
+    vertical-align middle
+    width $ds
+    height $ds
+    background-image url(public/dices.png)
+    background-position -($ds*1) 0px
+
+.dice3
+    display inline-block
+    vertical-align middle
+    width $ds
+    height $ds
+    background-image url(public/dices.png)
+    background-position -($ds*2) 0px
+
+.dice4
+    display inline-block
+    vertical-align middle
+    width $ds
+    height $ds
+    background-image url(public/dices.png)
+    background-position -($ds*3) 0px
+
+.dice5
+    display inline-block
+    vertical-align middle
+    width $ds
+    height $ds
+    background-image url(public/dices.png)
+    background-position -($ds*4) 0px
+
+.dice6
+    display inline-block
+    vertical-align middle
+    width $ds
+    height $ds
+    background-image url(public/dices.png)
+    background-position -($ds*5) 0px

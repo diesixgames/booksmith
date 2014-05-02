@@ -19,6 +19,34 @@ exports.getUnitNames = function() {
   };
 };
 
+exports.parseDices = function() {
+    return function(files, metalsmith, done) {
+        
+        for (var file in files) {
+            var str = files[file].contents.toString('utf8');
+            if (str == null) continue;
+
+            str = str.replace(/\[<?[1-6]>?\]/g, function(match) {
+
+                match = match.replace(/\</, 'lt');
+                match = match.replace(/\>/, 'gt');
+                match = match.replace(/\[|\]/g, "");
+                match = match.replace(/lt/, '<span class="diceleft"></span>');
+                match = match.replace(/gt/, '<span class="diceright"></span>');
+                match = match.replace(/[1-6]/, function(match2) {
+                    return '<span class="dice' + match2 + '"></span>';
+                });
+
+                return match;
+            });
+            
+            files[file].contents = new Buffer(str);
+        }
+
+        done();
+    }
+}
+
 exports.parseRef = function() {
     return function(files, metalsmith, done) {
         

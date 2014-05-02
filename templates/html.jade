@@ -21,8 +21,10 @@ doctype html
 html(lang="en")
   head
     title= "Notodeim" + (title?title:"")
+    +css("reset.css")
     +css("style.css")
     +css("general.css")
+    +css("dice.css")
     block head
 
   body

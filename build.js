@@ -24,6 +24,7 @@ Metalsmith(__dirname)
     .use(stylus())
     .use(templates('jade'))
     .use(customPlugins.parseRef())
+    .use(customPlugins.parseDices())
     .use(assets())
     .use(watch)
     .build(handle);
